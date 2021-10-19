@@ -19,4 +19,16 @@ VALUES
 ("Co-ordinator", 80000, 3),
 ("Lawyer", 120000, 4),
 ("Associate", 80000, 5),
-("President", 175000, 6),
+("President", 175000, 6)
+
+INSERT INTO employees (first_name, last_name, role_id, manager_id)
+VALUES
+("Kyle", "Lux", 9, NULL),
+("Andrew", "Remmel", 1, 1),
+("Jasen", "Plets", 2, 1),
+("Dave", "Palmer", 3, 3),
+("Aaron", "Kotte", 4, 4),
+("Adam", "Pratt", 7, 1),
+("Rebecca", "Harmon", 8, 1),
+("Corey", "Lux", 5, 2),
+("Alex", "Lux", 6, 2)
