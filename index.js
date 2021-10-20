@@ -243,23 +243,14 @@ function remove(input) {
 };
 
 async function removeEmployee() {
-
-    const answer = await inquirer.prompt([
-        {
-            name: "first",
-            type: "input",
-            message: "Enter the employee ID you want to remove:  "
-        }
-    ]);
-
-    connection.query('DELETE FROM employee WHERE ?',
-        {
-            id: answer.first
-        },
+    //console.log('reached');
+    const employeeId = await inquirer.prompt(askId());
+    //console.log('reached');
+    connection.query(`DELETE FROM employee WHERE employee_id = ${employeeId.name}`,
         function (err) {
             if (err) throw err;
         }
-    )
+    );
     console.log('Employee has been removed on the system!');
     prompt();
 
